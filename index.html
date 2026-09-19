@@ -4,55 +4,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Amazon Wishlists</title>
+    <title>Ludicrous Laser | Wishlists</title>
     <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --hover-border: #444444;
+        }
+
         body {
-            font-family: sans-serif;
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 0 20px;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 20px;
         }
 
         h1 {
-            color: #232f3e;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: var(--text-main);
         }
 
-        ul {
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        ul.wishlist-grid {
             list-style: none;
             padding: 0;
+            margin: 0;
+            width: 100%;
         }
 
         li {
-            margin: 12px 0;
+            margin-bottom: 16px;
         }
 
-        a {
-            display: inline-block;
-            padding: 10px 15px;
-            background: #ff9900;
-            color: #111;
+        a.wishlist-card {
+            display: block;
+            padding: 18px 20px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: var(--text-main);
             text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
-        a:hover {
-            background: #e68a00;
+        a.wishlist-card:hover {
+            border-color: var(--hover-border);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
     </style>
 </head>
 
 <body>
-    <h1>My Wishlists</h1>
-    <ul>
-        <li><a href="https://www.amazon.com/hz/wishlist/ls/1SL3VUVV93IMV?ref_=wl_share" target="_blank"
-                rel="noopener">Laser Cutting</a></li>
-        <li><a href="https://www.amazon.com/hz/wishlist/ls/102BHVZXOC0DO?ref_=wl_share" target="_blank"
-                rel="noopener">Filament Printing</a></li>
-        <li><a href="https://www.amazon.com/hz/wishlist/ls/102BHVZXOC0DO?ref_=wl_share" target="_blank"
-                rel="noopener">Resin Printing</a></li>
+
+    <div class="header">
+        <img src="logo.png" alt="Ludicrous Laser Logo" class="logo">
+        <h1>Precision Fabrication & Wishlists</h1>
+        <p class="subtitle">Materials, accessories, and upgrades for our Humble, TX workshop.</p>
+    </div>
+
+    <ul class="wishlist-grid">
+        <li>
+            <a href="https://www.amazon.com/hz/wishlist/ls/1SL3VUVV93IMV?ref_=wl_share" target="_blank" rel="noopener"
+                class="wishlist-card">
+                <div class="card-title">Laser Cutting</div>
+                <div class="card-desc">Wood stock, acrylic, optics, and laser maintenance gear</div>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.amazon.com/hz/wishlist/ls/102BHVZXOC0DO?ref_=wl_share" target="_blank" rel="noopener"
+                class="wishlist-card">
+                <div class="card-title">Filament Printing</div>
+                <div class="card-desc">PLA spools, nozzles, build plates, and Bambu accessories</div>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.amazon.com/hz/wishlist/ls/102BHVZXOC0DO?ref_=wl_share" target="_blank" rel="noopener"
+                class="wishlist-card">
+                <div class="card-title">Resin Printing</div>
+                <div class="card-desc">Resins, release films, wash/cure supplies, and safety equipment</div>
+            </a>
+        </li>
     </ul>
+
 </body>
 
 </html>
